@@ -1,0 +1,23 @@
+{
+  "name": "r-train5_redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IlyaKrapivkin/r-train5_redux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IlyaKrapivkin/r-train5_redux/issues"
+  },
+  "homepage": "https://github.com/IlyaKrapivkin/r-train5_redux#readme",
+  "dependencies": {
+    "redux": "^4.0.5"
+  }
+}
