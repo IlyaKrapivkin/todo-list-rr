@@ -1,3 +1,4 @@
+// no modules!
 const redux = require('redux');
 
 const initialState = {
