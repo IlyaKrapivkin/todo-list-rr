@@ -22,16 +22,21 @@ const reducer = (state, action) => {
           name: action.payload
         }
       }
-      case "UPDATE_USER_AGE":
-        return {
-          ...state,
-          user: {
-            ...state.user,
-            age: action.payload
-          }
+    case "UPDATE_USER_AGE":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          age: action.payload
         }
-      default:
-        return state;
+      }
+    case "UPDATE_USER":
+    return {
+      ...state,
+      user: action.payload
+    }
+    default:
+      return state;
   }
 }
 
@@ -45,12 +50,20 @@ const actionUpdateName = {
   type: "UPDATE_USER_NAME",
   payload: "Tapac"
 }
-
 store.dispatch(actionUpdateName);
 // 02
 const actionUpdateAge = {
   type: "UPDATE_USER_AGE",
   payload: "15"
 }
-
 store.dispatch(actionUpdateAge);
+// 03
+const actionUpdateUser = {
+  type: "UPDATE_USER",
+  payload: {
+    name: 'Igor',
+    age: '16'
+  }
+}
+store.dispatch(actionUpdateUser);
+
