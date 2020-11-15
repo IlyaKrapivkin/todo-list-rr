@@ -22,6 +22,14 @@ const reducer = (state, action) => {
           name: action.payload
         }
       }
+      case "UPDATE_USER_AGE":
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            age: action.payload
+          }
+        }
       default:
         return state;
   }
@@ -32,9 +40,17 @@ const store = redux.createStore(reducer, initialState);
 store.subscribe(() => {
   console.log(store.getState());
 })
-
-
-store.dispatch({
+// 01
+const actionUpdateName = {
   type: "UPDATE_USER_NAME",
   payload: "Tapac"
-})
+}
+
+store.dispatch(actionUpdateName);
+// 02
+const actionUpdateAge = {
+  type: "UPDATE_USER_AGE",
+  payload: "15"
+}
+
+store.dispatch(actionUpdateAge);
