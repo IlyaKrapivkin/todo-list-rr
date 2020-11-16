@@ -14,7 +14,7 @@ const updateUserAge = (age) => {
   }
 }
 
-const updateUser = (name, age) => {
+const updateUser = (name = '', age = '') => {
   return {
     type: TYPES.UPDATE_USER,
     payload: {
