@@ -1,8 +1,25 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addNew } from '../../redux/actionCreators/tasks'
+
 function Form() {
+  const [value, setValue] = useState('');
+
+  const dispatch = useDispatch();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (value.trim()) {
+      dispatch(addNew(value.trim()));
+      setValue('');
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="form-group">
-        <input type="text" className="form-control"/>
+        <input onChange={(e) => setValue(e.target.value)} value={value} type="text" className="form-control"/>
       </div>
 
       <button type="submit" className="btn btn-primary">Submit</button>
